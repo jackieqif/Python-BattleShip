@@ -107,6 +107,10 @@ Your goal is to save your nation by sinking the enemy ship as a commander.
 
 
 
+
+
+
+
                                        # #  ( )
                                   ___#_#___|__
                               _  |____________|  _
@@ -124,10 +128,13 @@ wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
     print '''
 
 This is your ship, Commander.
-Your ship is equipped with advanced shield and guided missle.
+It is equipped with advanced shield and guided missle.
 
-You will need to provide row and colum coodinates to 
-and colum number as coodinates for your missle.
+You just need to provide row and colum number 
+as coodinates for your missle to hit target.
+
+
+
 
     '''
     name = raw_input('Ready? Enter your name here:')
@@ -142,8 +149,132 @@ _____________________________________________
 _____________________________________________
 
 
+                    |
+                    |
+           |        |
+         |-|-|      |
+           |        |
+           | {O}    |
+           '--|     |
+             .|]_   |
+       _.-=.' |     |
+      |    |  |]_   |
+      |_.-='  |   __|__
+       _.-='  |\   /|\\
+      |    |  |-'-'-'-'-.
+      |_.-='  '========='
+           `   |     |
+            `. |    / \\
+              ||   /   \____.
+              ||_.'--=='    |       //  //   / /
+              ||  |    |    |\\\    //  //   / /                      ___
+ ____         ||__|____|____| \||_/ |_/ |__/  \ __________________/|   |
+|    |______  |===.---. .---.========''=-./// |     |     |     / |   |
+|    ||     |\| |||   | |   |      '===' ||  \|_____|_____|____/__|___|
+|-.._||_____|_\___'---' '---'______....---===''======//=//////========|
+|--------------\------------------/-----------------//-//////---------/
+|               \                /                 // //////         /
+|                \______________/                 // //////         /
+|                                        _____===//=//////=========/
+|==============================================================   /
+'----------------------------------------------------------------`
+
 
     '''
+
+    def print_radar1(self):
+      print """
+     
+                  .-  _           _  -.
+                 /   /             \   .
+                (   (  (` (-o-) `)  )   )
+                 \   \_ `  -+-  ` _/   /
+                  `-       -+-       -`
+                           -+-
+              __  _   ___  _|_  ___   __ ___
+      
+      """
+
+    def print_radar2(self):
+      print """
+                   O
+                   |
+                   |
+                   |  
+             ______|
+          /______  |
+         |       | |      
+         | ===== | |     
+         | ===== | |    
+         |       | |         
+         |  .-.  | |       o    
+         | ' . ' | |   |~       
+      ..'| '._.' | |  o
+    .'   |_______|/ 
+
+      """
+
+    def print_radar3(self):
+      print """
+             ,-.
+            / \  `.  __..-,O
+           :   \ --''_..-'.'
+           |    . .-' `. '.
+           :     .     .`.'
+            \     `.  /  ..
+             \      `.   ' .
+              `,       `.   .
+             ,|,`.        `-..
+            '.||  ``-...__..-`
+             |  |
+             |__|
+           // |||||
+        __//__||__|||__
+       '--------------'
+      """
+
+    def print_defected(self):
+      print """
+                    ,a_a
+                   {/ ''\_
+                   {\ ,_oo)
+                   {/  (_^_____________________
+         .=.      {/ \___)))*)----------;=====;`
+        (.=.`\   {/   /=;  ~~           |||::::
+            \ `\{/(   \/\               |||::::
+             \  `. `\  ) )              |||||||
+         You  \    // /_/_              |||||||
+               '==''---))))             |||||||
+
+
+
+
+                                    
+                                      \   O,
+                            \___________\/ )_________/
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ \~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+      """
+
+    def print_victory(self):
+      print """
+                                         |__
+                                         |\/
+            [[     *********       ]]    |--  
+            [[ We are proud of you!]]--/ |
+            [[ *****         ***** ]]   | || 
+                                _/|     _/|-++'
+                            +  +--|    |--|--|_ |-
+                         { /|__|  |/\__|  |--- |||__/
+                        +---------------___[}-_===_.'____                 /
+                    ____`-' ||___-{]_| _[}-  |     |_[___\==--            \/   _
+     __..._____--==/___]_|__|_____________________________[___\==--____,------' .7
+    |                                                                   You Win /
+     \_________________________________________________________________________|
+      wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+    wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+       wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww                                                                                                    
+      """
 
 
 if __name__ == '__main__':
