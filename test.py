@@ -280,3 +280,4 @@ _____________________________________________
 if __name__ == '__main__':
   story = Story()
   story.print_opening()
+  story.print_page('leg')
