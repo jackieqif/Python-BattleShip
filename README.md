@@ -6,6 +6,7 @@ A python BattleShip Game.
 This is a tribute to the old time when computer monitors only can display ASCII charactors.
 
 To play:
+  you need to have python installed on your computer
 
   download battleship.py file.
   
