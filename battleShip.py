@@ -1,11 +1,13 @@
-# BattleShip board Game
-# by jackieq
-# reviewed by Yunzhang's Budda power
+"""BattleShip board Game, by jackieq.
+"""
 
 from random import randint
-from urllib2 import Request, urlopen, URLError
+from urllib2 import Request
+# from urllib2 import URLError
+from urllib2 import urlopen
 
-BOARD = [['O' for i in xrange(5)] for j in xrange(5)]
+
+BOARD = [['O' for a in xrange(5)] for b in xrange(5)]
 
 LEVEL = {
     1: 10,
@@ -13,20 +15,26 @@ LEVEL = {
     3: 3
     }
 
-HIT_MARK = "X"
+HIT_MARK = 'X'
 
 
-class StoryLine:
+class StoryLine(object):
+  """Class holding storyline.
+
+  Each methords contains dedicate part of the story, i.e. PrintOpening()
+  """
+
   def __init__(self, name=None):
-    self.ASCII_URL = {
+    self.ascii_url = {
         'leg': ['http://www.ascii-art.de/ascii/jkl/leg.txt', (270, 2000)],
-        'marriage': ['http://www.ascii-art.de/ascii/mno/marriage.txt', (700, 2500)]
+        'marriage': ['http://www.ascii-art.de/ascii/mno/marriage.txt',
+                     (700, 2500)]
     }
     self.name = name
 
   def PrintRemote(self, picture, message=None):
-    url = self.ASCII_URL[picture][0]
-    start, end = self.ASCII_URL[picture][1][0], self.ASCII_URL[picture][1][1]
+    url = self.ascii_url[picture][0]
+    start, end = self.ascii_url[picture][1][0], self.ascii_url[picture][1][1]
     request = Request(url)
     response = urlopen(request)
     content = response.read()[start:end]
@@ -36,7 +44,8 @@ class StoryLine:
       print message
 
   def PrintOpening(self):
-    print '''
+    """Print story opening."""
+    print r"""
                                                    ,:
                                                  ,' |
                                                 /   :
@@ -45,9 +54,9 @@ class StoryLine:
                                              /  <//
                                           __/   /
                                           )'-. /
-                                         ./   :\\
+                                         ./   //
                                          /.' '
-                                         '/'
+                                         '/' ,
                                          +
                                         '
                                       `.
@@ -70,11 +79,11 @@ ______       _   _   _        _____ _     _         _____  _____  __    ___
 \____/ \__,_|\__|\__|_|\___| \____/|_| |_|_| .__/  \_____/ \___/ \___/   |_/
                                            | |
                                            |_|             jackieq@
-    '''
+    """
 
     Continue()
     print '\n' * 5
-    print '''
+    print r"""
 
 ________________________________________________________________________________
  ,    _, ___,'_,    ,_, _     ,  ,     __  _  ___,___,    _, _, , ,  ___, ,_!
@@ -83,8 +92,9 @@ ________________________________________________________________________________
    '   `  '  '      '   '  `(_/      '     '  `'   '   '   `'   ' ` '     '
 ________________________________________________________________________________
 
-    '''
-    print '''
+
+
+
 A invading alian flagship has been detected.
 Your goal is to save your nation by sinking the enemy ship as a commander.
 
@@ -107,9 +117,9 @@ Your goal is to save your nation by sinking the enemy ship as a commander.
        .  *     \\x_x_x_x_x_x/
 
 
-'''
+"""
     Continue()
-    print '''
+    print r"""
 
 
 
@@ -130,18 +140,19 @@ wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
    wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
 
 
-   '''
-    print '''
+
+
 
 This is your ship, Commander.
 It is equipped with advanced shield and guided missle.
 
 
 
-    '''
+    """
 
-  def print_entering(self):
-    print '''
+  def PrintEntering(self):
+    """Print ship entering battle field."""
+    print r"""
 _____________________________________________
 
          Entering into battle area...
@@ -163,7 +174,7 @@ _____________________________________________
             `. |    / \\
               ||   /   \____.
               ||_.'--=='    |       //  //   / /
-              ||  |    |    |\\\    //  //   / /                      ___
+              ||  |    |    |\\    //  //   / /                      ___
  ____         ||__|____|____| \||_/ |_/ |__/  \ __________________/|   |
 |    |______  |===.---. .---.========''=-./// |     |     |     / |   |
 |    ||     |\| |||   | |   |      '===' ||  \|_____|_____|____/__|___|
@@ -177,11 +188,11 @@ _____________________________________________
 
 Remember, you just need to provide row and colum number
 as coordinate for your missle to hit the hidden alien ship.
-    '''
+    """
     Continue()
 
   def PrintRadar1(self):
-    print """
+    print r"""
                   .-  _           _  -.
                  /   /             \   .
                 (   (  (` (-o-) `)  )   )
@@ -206,7 +217,7 @@ as coordinate for your missle to hit the hidden alien ship.
     .'   |_______|/ """
 
   def PrintRadar3(self):
-    print """
+    print r"""
              ,-.
             / \  `.  __..-,O
            :   \ --''_..-'.'
@@ -218,8 +229,9 @@ as coordinate for your missle to hit the hidden alien ship.
              ,|,`.        `-..
             ||||  ``-...__..-` """
 
-  def PrintDefected(self):
-    print '''
+  def PrintDefeated(self):
+    """print message after being defeated."""
+    print r"""
 
     You base was destroyed,
     and you become homeless...
@@ -250,10 +262,10 @@ as coordinate for your missle to hit the hidden alien ship.
 
 
 
-'''
+"""
     Continue()
 
-    print '''
+    print r"""
                     ,a_a
                    {/ ''\_
                    {\ ,_oo)
@@ -274,43 +286,43 @@ as coordinate for your missle to hit the hidden alien ship.
                             \___________\/ )_________/
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ \~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-      '''
+      """
 
   def PrintVictory(self):
-    print '''
+    print r"""
 
-      I can\'t believe it, you just sank my ship!
-      Congratilations, you Win!
+    I can\'t believe it, you just sank my ship!
+    Congratilations, you Win!
 
-                                         |__
-                                         |\/
-            [[     *********       ]]    |--
-            [[ We are proud of you!]]--/ |
-            [[ *****         ***** ]]   | ||
-                                _/|     _/|-++'
-                            +  +--|    |--|--|_ |-
-                         { /|__|  |/\__|  |--- |||__/
-                        +---------------___[}-_===_.'____                 /
-                    ____`-' ||___-{]_| _[}-  |     |_[___\==--            \/   _
-     __..._____--==/___]_|__|_____________________________[___\==--____,------' .7
-    |                                                                   You Win /
-     \_________________________________________________________________________|
-      wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
-    wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
-       wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
-      '''  # end of Story class
+                                       |__
+                                       |\/
+          [[     *********       ]]    |--
+          [[ We are proud of you!]]--/ |
+          [[ *****         ***** ]]   | ||
+                              _/|     _/|-++'
+                          +  +--|    |--|--|_ |-
+                       { /|__|  |/\__|  |--- |||__/
+                      +---------------___[}-_===_.'____                 /
+                  ____`-' ||___-{]_| _[}-  |     |_[___\==--            \/   _
+   __..._____--==/___]_|__|_____________________________[___\==--____,------' .7
+  |                                                                   You Win /
+   \_________________________________________________________________________|
+    wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+  wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+     wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      """  # end of Story class
 
 
-def PrintBoard(BOARD):
-  print '''
+def PrintBoard(board):
+  print r"""
      N
    W-|-E
      S
-  '''
+  """
   print '   ' + ' '.join([str(i) for i in xrange(1, 6)])
   print '   ' + '-'.join(['-' for i in xrange(5)])
   for row in xrange(5):
-    print str(row + 1) + '| ' + ' '.join(BOARD[row])
+    print str(row + 1) + '| ' + ' '.join(board[row])
 
 
 def SelectLevel():
@@ -323,26 +335,28 @@ def SelectLevel():
       print 'Please input a number from 1 to 3'
     else:
       print '\n' * 11
+      print 'Level ' + str(user_input)
       print '__________________________________________________________________'
-      print 'You selected level %s, you have total of %s rounds to sink \
-the alien ship.' % (user_input, LEVEL[user_input])
+      print 'You have total of % s rounds to sink the alien ship.' % (
+          LEVEL[user_input])
       print '__________________________________________________________________'
-      print '\n'*2
+      print '\n'
       print 'Alian Ship detetcted! Missile waiting for target coordinate..'
       print '\n' * 11
       raw_input('Press Enter to continue...')
       return user_input, LEVEL[user_input]
 
 
-def RandomRow(BOARD):
-  return randint(0, len(BOARD) - 1)
+def RandomRow(board):
+  return randint(0, len(board) - 1)
 
 
-def RandomCol(BOARD):
-  return randint(0, len(BOARD[0]) - 1)
+def RandomCol(board):
+  return randint(0, len(board[0]) - 1)
 
 
 def RadarOfficior(story, ship_row, ship_col, guess_col, guess_row):
+  """print hint base on user input's offset to ship position."""
   if ship_row - guess_row < 0:
     story.PrintRadar1()
     print '((( Radar station1: Commander, enemy is up north )))'
@@ -362,8 +376,8 @@ def RadarOfficior(story, ship_row, ship_col, guess_col, guess_row):
 
   if abs(ship_col - guess_col) == 1 and abs(ship_row - guess_row) == 1:
     story.PrintRadar3()
-    print '((((( Beep... Beep... radar station3 detected that enemy is one \
-coodinate away from your last hit point!!! ))))'
+    print ('((((( Beep... Beep... radar station3 detected that enemy is one '
+           'coodinate away from your last hit point!!! ))))')
 
 
 def Guess(story, ship_row, ship_col):
@@ -416,16 +430,16 @@ def Main():
     ship_row = RandomRow(BOARD)
     ship_col = RandomCol(BOARD)
     user_input, rounds = SelectLevel()
-    story.print_entering()
+    story.PrintEntering()
 
-    for i in xrange(rounds):
-      print 'Round: ' + str(i+1)
+    for current_round in xrange(rounds):
+      print 'Round: ' + str(current_round+1)
       result = Guess(story, ship_row, ship_col)
       if result:
         story.PrintVictory()
         break
-      elif i == rounds - 1 and not result:
-        story.PrintDefected()
+      elif current_round == rounds - 1 and not result:
+        story.PrintDefeated()
 
     if not StartOver():
       break
