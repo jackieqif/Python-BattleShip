@@ -8,10 +8,10 @@ from urllib2 import Request, urlopen, URLError
 BOARD = [['O' for i in xrange(5)] for j in xrange(5)]
 
 LEVEL = {
-  1: 10,
-  2: 6,
-  3: 3
-  }
+    1: 10,
+    2: 6,
+    3: 3
+    }
 
 HIT_MARK = "X"
 
@@ -19,12 +19,12 @@ HIT_MARK = "X"
 class StoryLine:
   def __init__(self, name=None):
     self.ASCII_URL = {
-      'leg': ['http://www.ascii-art.de/ascii/jkl/leg.txt', (270, 2000)],
-      'marriage': ['http://www.ascii-art.de/ascii/mno/marriage.txt', (700, 2500)]
+        'leg': ['http://www.ascii-art.de/ascii/jkl/leg.txt', (270, 2000)],
+        'marriage': ['http://www.ascii-art.de/ascii/mno/marriage.txt', (700, 2500)]
     }
     self.name = name
 
-  def PrintRemote(self, picture, message = None):
+  def PrintRemote(self, picture, message=None):
     url = self.ASCII_URL[picture][0]
     start, end = self.ASCII_URL[picture][1][0], self.ASCII_URL[picture][1][1]
     request = Request(url)
@@ -41,17 +41,17 @@ class StoryLine:
                                                  ,' |
                                                 /   :
                                              --'   /
-                                             \/ />/
-                                             / <///
+                                             \/   />
+                                             /  <//
                                           __/   /
                                           )'-. /
-                                          ./  :\ 
-                                           /.' '
+                                         ./   :\\
+                                         /.' '
                                          '/'
                                          +
                                         '
                                       `.
-                                  .-"-     
+                                  .-"-
                                  (    |
                               . .-'  '.
                              ( (.   )8:
@@ -62,13 +62,13 @@ class StoryLine:
                       /_`( "a `a. )"'  '
                   (  (/  .  ' )=='') ` a `
                  (   (    )  .8"   +)) `) ` `
-______       _   _   _        _____ _     _         _____  _____  __    ___ 
+______       _   _   _        _____ _     _         _____  _____  __    ___
 | ___ \     | | | | | |      /  ___| |   (_)       / __  \|  _  |/  |  /   |
 | |_/ / __ _| |_| |_| | ___  \ `--.| |__  _ _ __   `' / /'| |/' |`| | / /| |
 | ___ \/ _` | __| __| |/ _ \  `--. \ '_ \| | '_ \    / /  |  /| | | |/ /_| |
 | |_/ / (_| | |_| |_| |  __/ /\__/ / | | | | |_) | ./ /___\ |_/ /_| |\___  |
 \____/ \__,_|\__|\__|_|\___| \____/|_| |_|_| .__/  \_____/ \___/ \___/   |_/
-                                           | |                              
+                                           | |
                                            |_|             jackieq@
     '''
 
@@ -77,10 +77,10 @@ ______       _   _   _        _____ _     _         _____  _____  __    ___
     print '''
 
 ________________________________________________________________________________
- ,    _, ___,'_,    ,_, _     ,  ,     __  _  ___,___,    _, _, , ,  ___, ,_! 
- |   /_,' |  (_,    |_)'|\    \_/     '|_)'|\' | ' | |   /_,(_, |_|,' |   |_) 
-'|__'\_   |   _)   '|'|_|-\  , /`     _|_) |-\ |   |'|__'\_  _)'| |  _|_,'|   
-   '   `  '  '      '   '  `(_/      '     '  `'   '   '   `'   ' ` '     '   
+ ,    _, ___,'_,    ,_, _     ,  ,     __  _  ___,___,    _, _, , ,  ___, ,_!
+ |   /_,' |  (_,    |_)'|\    \_/     '|_)'|\\' | ' | |   /_,(_, |_|,' |   |_)
+'|__'\_   |   _)   '|'|_|-\  , /`     _|_) |-\ |   |'|__'\_  _)'| |  _|_,'|
+   '   `  '  '      '   '  `(_/      '     '  `'   '   '   `'   ' ` '     '
 ________________________________________________________________________________
 
     '''
@@ -92,10 +92,10 @@ Your goal is to save your nation by sinking the enemy ship as a commander.
 
 
 
-  "We need to eliminate  
-   all species here,         "... people working for Google, 
+  "We need to eliminate
+   all species here,         "... people working for Google,
   where should we start       they are the ones most likely could stop us..."
-      from?"               
+      from?"
              \  _.-'~~~~'-._   /
       .      .-~ \__/  \__/ ~-.         .
            .-~   (oo)  (oo)    ~-.
@@ -144,9 +144,9 @@ It is equipped with advanced shield and guided missle.
     print '''
 _____________________________________________
 
-         Entering into battle area... 
+         Entering into battle area...
 _____________________________________________
-                    
+
            |        |
          |-|-|      |
            |        |
@@ -174,8 +174,8 @@ _____________________________________________
 |                                        _____===//=//////=========/
 |==============================================================   /
 '----------------------------------------------------------------`
-    
-Remember, you just need to provide row and colum number 
+
+Remember, you just need to provide row and colum number
 as coordinate for your missle to hit the hidden alien ship.
     '''
     Continue()
@@ -193,15 +193,15 @@ as coordinate for your missle to hit the hidden alien ship.
     print """
                    O
                    |
-                   |  
+                   |
              ______|
           /______  |
-         |       | |      
-         | ===== | |     
-         | ===== | |    
-         |       | |         
-         |  .-.  | |       o    
-         | ' . ' | |    ~-       
+         |       | |
+         | ===== | |
+         | ===== | |
+         |       | |
+         |  .-.  | |       o
+         | ' . ' | |    ~-
       ..'| '._.' | |  o
     .'   |_______|/ """
 
@@ -241,12 +241,12 @@ as coordinate for your missle to hit the hidden alien ship.
 
 
 
-  ______                       _____                   
- / _____)                     / ___ \                  
-| /  ___  ____ ____   ____   | |   | |_   _ ____  ____ 
+  ______                       _____
+ / _____)                     / ___ \\
+| /  ___  ____ ____   ____   | |   | |_   _ ____  ____
 | | (___)/ _  |    \ / _  )  | |   | | | | / _  )/ ___)
-| \____/( ( | | | | ( (/ /   | |___| |\ V ( (/ /| |    
- \_____/ \_||_|_|_|_|\____)   \_____/  \_/ \____)_|    
+| \____/( ( | | | | ( (/ /   | |___| |\ V ( (/ /| |
+ \_____/ \_||_|_|_|_|\____)   \_____/  \_/ \____)_|
 
 
 
@@ -269,7 +269,7 @@ as coordinate for your missle to hit the hidden alien ship.
 
     You managed to escape though...
 
-                                    
+
                                       \   O,
                             \___________\/ )_________/
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ \~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -284,9 +284,9 @@ as coordinate for your missle to hit the hidden alien ship.
 
                                          |__
                                          |\/
-            [[     *********       ]]    |--  
+            [[     *********       ]]    |--
             [[ We are proud of you!]]--/ |
-            [[ *****         ***** ]]   | || 
+            [[ *****         ***** ]]   | ||
                                 _/|     _/|-++'
                             +  +--|    |--|--|_ |-
                          { /|__|  |/\__|  |--- |||__/
@@ -297,8 +297,8 @@ as coordinate for your missle to hit the hidden alien ship.
      \_________________________________________________________________________|
       wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
     wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
-       wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww 
-      '''# end of Story class
+       wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      '''  # end of Story class
 
 
 def PrintBoard(BOARD):
@@ -307,7 +307,7 @@ def PrintBoard(BOARD):
    W-|-E
      S
   '''
-  print '   ' +' '.join([str(i) for i in xrange(1,6)])
+  print '   ' + ' '.join([str(i) for i in xrange(1, 6)])
   print '   ' + '-'.join(['-' for i in xrange(5)])
   for row in xrange(5):
     print str(row + 1) + '| ' + ' '.join(BOARD[row])
@@ -319,13 +319,13 @@ def SelectLevel():
       user_input = int(raw_input('Please select game level (1~3): '))
     except:
       user_input = ''
-    if user_input not in [1,2,3]:
+    if user_input not in [1, 2, 3]:
       print 'Please input a number from 1 to 3'
     else:
       print '\n' * 11
       print '__________________________________________________________________'
       print 'You selected level %s, you have total of %s rounds to sink \
-the alien ship.'%(user_input, LEVEL[user_input])
+the alien ship.' % (user_input, LEVEL[user_input])
       print '__________________________________________________________________'
       print '\n'*2
       print 'Alian Ship detetcted! Missile waiting for target coordinate..'
@@ -375,7 +375,6 @@ def Guess(story, ship_row, ship_col):
   except:
     print 'Commander, we can not understand coodinate you\'ve provided...'
     return result
-  
   if guess_row == ship_row and guess_col == ship_col:
     print 'Bang... Bang...'
     print 'Bang...'
@@ -404,10 +403,12 @@ def StartOver():
     else:
       print 'Sorry Commander, I can not understand your instruction... \n'
 
+
 def Continue():
   raw_input('Press Enter to continue...')
 
-def Main():  
+
+def Main():
 
   while True:
     story = StoryLine()
@@ -423,7 +424,7 @@ def Main():
       if result:
         story.PrintVictory()
         break
-      elif i == rounds - 1 and result == False:
+      elif i == rounds - 1 and not result:
         story.PrintDefected()
 
     if not StartOver():
