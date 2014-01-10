@@ -329,7 +329,7 @@ def SelectLevel():
   while True:
     try:
       user_input = int(raw_input('Please select game level (1~3): '))
-    except:
+    except ValueError:
       user_input = ''
     if user_input not in [1, 2, 3]:
       print 'Please input a number from 1 to 3'
@@ -344,7 +344,7 @@ def SelectLevel():
       print 'Alian Ship detetcted! Missile waiting for target coordinate..'
       print '\n' * 11
       raw_input('Press Enter to continue...')
-      return user_input, LEVEL[user_input]
+      return LEVEL[user_input]
 
 
 def RandomRow(board):
@@ -386,7 +386,7 @@ def Guess(story, ship_row, ship_col):
   try:
     guess_row = int(raw_input('Target Row (1~5):')) - 1
     guess_col = int(raw_input('Target Col (1_5):')) - 1
-  except:
+  except ValueError:
     print 'Commander, we can not understand coodinate you\'ve provided...'
     return result
   if guess_row == ship_row and guess_col == ship_col:
@@ -429,7 +429,7 @@ def Main():
     story.PrintOpening()
     ship_row = RandomRow(BOARD)
     ship_col = RandomCol(BOARD)
-    user_input, rounds = SelectLevel()
+    rounds = SelectLevel()
     story.PrintEntering()
 
     for current_round in xrange(rounds):
